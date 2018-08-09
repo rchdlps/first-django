@@ -1,0 +1,28 @@
+{% load staticfiles %}
+<html>
+
+<head>
+    <title>Blog Django</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+</head>
+
+<body>
+    <section class="container hero">
+        <section class="hero is-primary">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title">
+                        Blog Django
+                    </h1>
+                    <h2 class="subtitle">
+                        First Test
+                    </h2>
+                </div>
+            </div>
+        </section>
+        {% block content %} {% endblock %}
+    </section>
+</body>
+
+</html>

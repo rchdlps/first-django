@@ -1,14 +1,16 @@
-{% extends 'blog/base.html' %}{% block content %} {% for post in posts %}
+{% extends 'blog/base.html' %} {% block content %}
 <div class="card">
     <ul>
+        {% if post.published_date %}
         <li class="date">
             <span class="tag">
                 {{ post.published_date }}
             </span>
         </li>
+        {% endif %}
         <li class="card-header-title">
             <h1>
-                <a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a>
+                {{ post.title }}
             </h1>
         </li>
     </ul>
@@ -16,4 +18,4 @@
         <p class="content">{{ post.text|linebreaksbr }}</p>
     </div>
 </div>
-{% endfor %} {% endblock %}
+{% endblock %}
